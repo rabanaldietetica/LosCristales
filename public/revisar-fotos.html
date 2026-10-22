@@ -1,0 +1,76 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Los Cristales | Revisión de fotografías</title>
+<style>
+*{box-sizing:border-box}
+body{margin:0;background:#171613;color:#f6edd9;font-family:Arial,sans-serif;padding:18px}
+h1{color:#d9b76b;font-size:25px;margin:0 0 8px}
+p{color:#d0c7b6;line-height:1.5}
+.grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}
+article{background:#26231e;border:1px solid #66532f;border-radius:13px;overflow:hidden;min-width:0}
+img{width:100%;height:155px;object-fit:cover;display:block;background:#38342d}
+.info{padding:9px;font-size:12px;overflow-wrap:anywhere}
+.num{color:#d9b76b;font-weight:bold;margin-right:5px}
+@media(min-width:650px){.grid{grid-template-columns:repeat(3,minmax(0,1fr))}img{height:200px}}
+</style>
+</head>
+<body>
+<h1>Los Cristales — Revisión de fotos</h1>
+<p>Revisá cada fotografía junto a su nombre. Tocá una imagen para verla ampliada.</p>
+<div class="grid" id="grid"></div>
+<script>
+const files = [
+"aji-lengua.jpg",
+"arroz-chaufa-carne.jpg",
+"arroz-chaufa-mixto.jpg",
+"arroz-chaufa-pollo.jpg",
+"bife.jpg",
+"caldo-mote.jpg",
+"charkekan.jpg",
+"chicharron.jpg",
+"churrasco.jpg",
+"costillar.jpg",
+"empanadas.jpg",
+"estofado-pollo.jpg",
+"fricase.jpg",
+"hamburguesa-papas.jpg",
+"lomo-montado.jpg",
+"lomo-salteado.jpg",
+"matambrito-cerdo.jpg",
+"milanesa-carne.jpg",
+"milanesa-napolitana.jpg",
+"papas-fritas.jpg",
+"picante-carne.jpg",
+"picante-pollo.jpg",
+"pizza.jpg",
+"pollo-broaster.jpg",
+"pollo-dorado.jpg",
+"salchipapa.jpg",
+"sanguche-milanesa-carne.jpg",
+"sanguche-milanesa-pollo.jpg",
+"silpancho.jpg",
+"sopa-chairo.jpg",
+"sopa-mani.jpg",
+"suprema-pollo.jpg"
+];
+const grid=document.getElementById("grid");
+files.forEach((file,i)=>{
+ const card=document.createElement("article");
+ const img=document.createElement("img");
+ img.src="/images/"+file;
+ img.alt=file;
+ img.loading="lazy";
+ img.addEventListener("click",()=>window.open(img.src,"_blank"));
+ const info=document.createElement("div");
+ info.className="info";
+ info.innerHTML='<span class="num">'+String(i+1).padStart(2,"0")+'</span>';
+ info.append(document.createTextNode(file));
+ card.append(img,info);
+ grid.append(card);
+});
+</script>
+</body>
+</html>
