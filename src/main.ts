@@ -70,7 +70,7 @@ app.innerHTML = `
             <div class="logo-corner corner-tr"></div>
             <div class="logo-corner corner-bl"></div>
             <div class="logo-corner corner-br"></div>
-            <img class="hero-logo" src="/images/logo-los-cristales.png" alt="Logo de Los Cristales" fetchpriority="high">
+            <img class="hero-logo" src="/images/logo.jpg" alt="Logo de Los Cristales" fetchpriority="high">
           </div>
           <p class="hero-kicker">TRADICIÓN · SABOR · ENCUENTRO</p>
           <h1>Dos culturas.<br><em>Una mesa llena de sabor.</em></h1>
